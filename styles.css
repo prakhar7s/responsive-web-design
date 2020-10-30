@@ -1,0 +1,90 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "footer footer footer footer";
+  grid-gap: 0.2rem;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+nav {
+  background-color: #f07979;
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+
+main {
+  background-color: #77f0d1;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+
+#sidebar {
+  background-color: #b7fa7c;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+#content1 {
+  background-color: #6af7a4;
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+#content2 {
+  background-color: #7df389;
+  grid-area: content2;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+#content3 {
+  background-color: #d88af7;
+  grid-area: content3;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+
+footer {
+  background-color: #92bcf3;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+}
